@@ -51,3 +51,7 @@ This release is a mathematical simulation only. It does not accept target URLs o
 ## Reproducibility
 
 Provide an explicit `--seed` value and keep the scenario JSON with the output report. Results are deterministic for the same source version, scenario and seed.
+
+## Working with coding agents
+
+Start with [`AGENTS.md`](AGENTS.md) for repository-wide invariants, architecture, commands and review rules. Use [`SKILLS.md`](SKILLS.md) to select a task-specific workflow. Canonical skills are stored in `.agents/skills/`; Claude Code discovery entries are stored in `.claude/skills/`. Read the relevant skill before changing domain logic. All agent output remains subject to human review; documentation and tests do not replace scientific, operational or safety validation.
