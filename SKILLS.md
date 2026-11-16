@@ -40,3 +40,10 @@ Perform the safety and release gate for Safe-Break. Use before merging changes t
 - Other coding models: read `AGENTS.md` and this index, then open the selected canonical skill.
 
 The Claude entries are intentionally short pointers to the canonical documents to reduce duplication. When moving or renaming a canonical skill, update its Claude discovery entry and this index in the same change.
+
+## `multi-agent-review-handoff`
+
+Coordinate research, implementation, independent review and verification across coding models for Safe-Break. Use for any non-trivial simulator or resilience change.
+
+- Canonical: [`.agents/skills/multi-agent-review-handoff/SKILL.md`](.agents/skills/multi-agent-review-handoff/SKILL.md)
+- Claude discovery: [`.claude/skills/multi-agent-review-handoff/SKILL.md`](.claude/skills/multi-agent-review-handoff/SKILL.md)
