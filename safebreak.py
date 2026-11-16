@@ -146,7 +146,7 @@ def main(argv: list[str] | None = None) -> int:
         result = run_simulation(Scenario.from_dict(raw), seed=args.seed)
         rendered = json.dumps(result, indent=2)
         if args.output:
-            args.output.write_text(rendered + "\\n", encoding="utf-8")
+            args.output.write_text(rendered + "\n", encoding="utf-8")
         else:
             print(rendered)
         return 0
