@@ -1,0 +1,10 @@
+{
+  "name": "dependency-latency-and-errors-demo",
+  "requests": 1000,
+  "base_latency_ms": 80,
+  "jitter_ms": 12,
+  "baseline_failure_rate": 0.01,
+  "extra_latency_ms": 120,
+  "additional_failure_rate": 0.08,
+  "dependency_available": true
+}
