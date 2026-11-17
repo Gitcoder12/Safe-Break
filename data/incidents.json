@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0",
+  "incidents": [
+    {
+      "id": "m365-outlook-exchange-2026-11",
+      "organization": "Microsoft",
+      "services": ["Outlook", "Exchange Online", "Microsoft Teams", "Microsoft 365", "Copilot"],
+      "start": "2026-11-12T11:20:00-05:00",
+      "end": "2026-11-13T11:10:00-05:00",
+      "incident_class": "multi_factor_infrastructure_failure",
+      "failure_modes": [
+        "latent_software_defect",
+        "dependency_failover",
+        "capacity_loss",
+        "recovery_backlog",
+        "health_check_blind_spot"
+      ],
+      "vendor_reported_contributing_factors": [
+        "A latent lock-contention defect in the Microsoft 365 networking gateway had been present since a July 2026 change.",
+        "A Teams failover to the primary gateway changed traffic patterns and increased load on that gateway.",
+        "Nearly 14 percent of gateway server capacity was unavailable due to an unrelated issue."
+      ],
+      "failure_chain": [
+        "A latent software defect interacted with a changed traffic pattern and reduced capacity.",
+        "Gateway servers became unresponsive; reporting described more than 80 percent of the affected gateway fleet as unresponsive at the peak.",
+        "Traffic redistribution and restarting servers added load to the remaining capacity.",
+        "Backlogged traffic made recovery harder until the issue was identified and the gateway fix was deployed."
+      ],
+      "impact": {
+        "customer_count": null,
+        "customer_count_note": "No verified normalized customer count is entered in this record.",
+        "services_affected": ["Outlook", "Exchange Online", "Teams", "Copilot", "other Microsoft 365 services"],
+        "status": "restored"
+      },
+      "security_assessment": {
+        "status": "Microsoft reported no evidence of malicious activity",
+        "classification": "reliability_incident_not_a_confirmed_cyberattack"
+      },
+      "evidence_status": "reported_preliminary_vendor_post_incident_explanation",
+      "final_postmortem_status": "preliminary_report_available_final_review_pending",
+      "sources": [
+        {
+          "publisher": "BleepingComputer",
+          "published": "2026-11-16",
+          "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-says-months-old-bug-caused-global-microsoft-365-outage/"
+        },
+        {
+          "publisher": "The Verge",
+          "published": "2026-11-17",
+          "url": "https://www.theverge.com/tech/1035364/microsoft-outlook-outage-notepad"
+        },
+        {
+          "publisher": "Associated Press",
+          "published": "2026-11-17",
+          "url": "https://apnews.com/article/6376045281feb430c0b923e3a4b251c2"
+        }
+      ],
+      "lessons": [
+        "Load tests must cover realistic traffic mixtures and the hardware SKU families that are actually deployed.",
+        "Failover can turn a local incident into a cascading failure if the receiving dependency has insufficient headroom.",
+        "Capacity health must include unavailable capacity, maintenance and degraded states.",
+        "Recovery requires queue drainage controls and should be load-tested separately from steady-state service."
+      ]
+    }
+  ]
+}
