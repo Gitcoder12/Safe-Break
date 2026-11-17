@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "safe-break"
+version = "0.1.0"
+description = "Sourced incident casebook and resilience-control learning tool"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+safe-break = "safe_break:main"
+
+[tool.setuptools]
+py-modules = ["safe_break"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
