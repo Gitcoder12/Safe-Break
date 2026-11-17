@@ -12,7 +12,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
-DEFAULT_CASEBOOK = Path(__file__).resolve().parents[1] / "data" / "incidents.json"
+DEFAULT_CASEBOOK = Path(__file__).resolve().parent / "data" / "incidents.json"
 
 CONTROL_LIBRARY: dict[str, tuple[str, ...]] = {
     "latent_software_defect": (
