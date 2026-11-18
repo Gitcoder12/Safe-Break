@@ -30,3 +30,10 @@ Sources: [BleepingComputer, 16 Nov 2026](https://www.bleepingcomputer.com/news/m
 Start with disposable local or staging targets. Any future fault injector must require explicit target allowlisting, authorization proof, a maximum test duration, rate limits, rollback/stop conditions and a production-target denylist. Do not run destructive tests against third-party or production services without formal authorization.
 
 Run tests with `pytest -q`. Controls are candidates for architecture-specific review and validation, not proof of resilience.
+
+---
+
+## Examples Used
+- Studying a cloud-service outage caused by gateway overload
+- Testing backpressure and bounded queues in a staging service
+- Practising rollback after a controlled failure experiment
