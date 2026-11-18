@@ -30,3 +30,21 @@ Sources: [BleepingComputer, 16 Nov 2026](https://www.bleepingcomputer.com/news/m
 Start with disposable local or staging targets. Any future fault injector must require explicit target allowlisting, authorization proof, a maximum test duration, rate limits, rollback/stop conditions and a production-target denylist. Do not run destructive tests against third-party or production services without formal authorization.
 
 Run tests with `pytest -q`. Controls are candidates for architecture-specific review and validation, not proof of resilience.
+
+
+---
+
+## Branch Activity & Development History
+
+**Audit date:** 2026-11-18 · **Comparison base:** `main`
+
+| Branch | Difference from `main` | Observed work / changed paths |
+|---|---:|---|
+| `feat/offline-chaos-simulator-mvp-20261116` | 20 ahead / 2 behind | Offline chaos simulator, scenario examples, simulation/release review skills, agent guidance and tests |
+| `feat/outage-casebook` | 7 / 1 | Outage casebook dataset, safe-break implementation, CI/package configuration and tests |
+
+### Open pull requests observed during this audit
+
+- [PR #1 — offline chaos simulator MVP](https://github.com/Gitcoder12/Safe-Break/pull/1)
+
+**Review note:** Keep the simulator offline and bounded. Review scenario assumptions, safety limits and test coverage before merging; the branch comparison does not prove resilience in a live environment. No branches have been merged or deleted by this documentation update.
