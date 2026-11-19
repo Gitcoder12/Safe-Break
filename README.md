@@ -37,3 +37,27 @@ Run tests with `pytest -q`. Controls are candidates for architecture-specific re
 - Studying a cloud-service outage caused by gateway overload
 - Testing backpressure and bounded queues in a staging service
 - Practising rollback after a controlled failure experiment
+
+
+---
+
+## Comparison with Existing Open-Source Projects
+
+Safe-Break is documented as an authorized resilience-learning system that turns real service incidents and controlled failure experiments into reusable engineering controls. Its current MVP is an incident casebook, with explicit safety boundaries for any future fault injection. These projects provide adjacent chaos-engineering references.
+
+| Project | Established focus | Relationship to Safe-Break |
+|---|---|---|
+| [Chaos Mesh](https://github.com/chaos-mesh/chaos-mesh) | Cloud-native chaos engineering for Kubernetes environments | A mature fault-injection platform; Safe-Break's current focus is incident learning and a controlled path toward resilience experiments, not a Kubernetes chaos operator. |
+| [Litmus](https://github.com/litmuschaos/litmus) | Chaos engineering framework and experiment orchestration | Provides established experiment templates and workflows; Safe-Break aims to connect incident evidence to selected resilience controls and learning records. |
+| [Chaos Monkey](https://github.com/Netflix/chaosmonkey) | Randomized failure injection to test resilience in production-like systems | A foundational chaos-engineering reference; Safe-Break's intended approach is more explicitly casebook- and authorization-gated. |
+
+### Where Safe-Break is different
+- **Incident-to-control learning:** the product concept connects a documented failure mechanism to candidate controls and follow-up experiments.
+- **Evidence-aware casebook:** the README distinguishes preliminary vendor statements from verified root causes and retains source links.
+- **Strict authorization boundary:** future fault injection is intended only for approved local/staging targets with allowlists, time limits and rollback controls.
+
+### Where established projects are stronger
+Chaos Mesh and Litmus provide actual experiment orchestration and infrastructure integrations. Safe-Break's current MVP is a casebook, not a fault-injection engine or proof that a service is resilient.
+
+### Safety and evidence requirements
+Preserve incident source dates and evidence status, separate reported causes from independently confirmed causes, and do not generalize one outage into universal controls. Any future experiment must require target authorization, bounded duration, rate limits, stop conditions and rollback. This is a learning-workflow comparison, not a resilience certification.
